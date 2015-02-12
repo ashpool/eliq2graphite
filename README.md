@@ -1,5 +1,5 @@
 # eliq2graphite
-Fetches energy consumption from Eliq and forwards them to Graphite.
+Fetches energy consumption from eliq and forwards them to Graphite.
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
