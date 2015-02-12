@@ -44,7 +44,7 @@ npm install eliq2graphite
 crontab -e
 ```
 
-Add this line to update sensors every minute
+Add this line to update average power every hour
 ```
 0 * * * * node <path to>/eliq2graphite/node_modules/.bin/eliq2graphite
 ```
