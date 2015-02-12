@@ -9,7 +9,7 @@
     "lib": "./lib"
   },
   "bin": {
-    "telldus2graphite": "./bin/telldus2graphite.js"
+    "eliq2graphite": "./bin/eliq2graphite.js"
   },
   "scripts": {
     "test": "gulp test"
