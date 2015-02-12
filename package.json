@@ -1,0 +1,44 @@
+{
+  "name": "eliq2graphite",
+  "version": "0.0.1",
+  "description": "Fetches energy consumption from Eliq and forwards them to Graphite",
+  "main": "bin/eliq2graphite",
+  "preferGlobal": "true",
+  "directories": {
+    "bin": "./bin",
+    "lib": "./lib"
+  },
+  "bin": {
+    "telldus2graphite": "./bin/telldus2graphite.js"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashpool/eliq2graphite.git"
+  },
+  "keywords": [
+    "eliq",
+    "graphite"
+  ],
+  "author": "Magnus Ljadas <magnus.ljadas@gmail.com> (https://github.com/ashpool)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ashpool/eliq2graphite/issues"
+  },
+  "homepage": "https://github.com/ashpool/eliq2graphite",
+  "dependencies": {
+    "graphite": "git://github.com/ashpool/node-graphite.git#master",
+    "log4js": "^0.6.22",
+    "request": "^2.53.0",
+    "rsvp": "^3.0.16"
+  },
+  "devDependencies": {
+    "chai": "^2.0.0",
+    "gulp": "^3.8.11",
+    "mocha": "^2.1.0",
+    "gulp-jshint": "^1.9.2",
+    "gulp-mocha": "^2.0.0"
+  }
+}
