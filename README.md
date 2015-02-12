@@ -1,6 +1,8 @@
 # eliq2graphite
 Fetches energy consumption from Eliq and forwards them to Graphite.
 
+[![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
+
 ```
 [INFO] lib/graphite.js - logged { power: { average: { hour: 1710 } } } Thu Feb 12 2015 01:30:00 GMT+0100 (CET)
 [INFO] lib/graphite.js - logged { power: { average: { hour: 1685 } } } Thu Feb 12 2015 02:30:00 GMT+0100 (CET)
@@ -46,3 +48,9 @@ Add this line to update sensors every minute
 ```
 0 * * * * node <path to>/eliq2graphite/node_modules/.bin/eliq2graphite
 ```
+
+[npm-url]: https://npmjs.org/package/eliq2graphite
+[downloads-image]: http://img.shields.io/npm/dm/eliq2graphite.svg
+[npm-image]: http://img.shields.io/npm/v/eliq2graphite.svg
+[travis-url]: https://travis-ci.org/ashpool/eliq2graphite
+[travis-image]: http://img.shields.io/travis/ashpool/eliq2graphite.svg
