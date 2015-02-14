@@ -4,24 +4,17 @@ Fetches energy consumption from eliq and forwards them to Graphite.
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
 ```
-[INFO] lib/graphite.js - logged { power: { average: { hour: 1710 } } } Thu Feb 12 2015 01:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 1685 } } } Thu Feb 12 2015 02:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 1718 } } } Thu Feb 12 2015 03:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 1844 } } } Thu Feb 12 2015 04:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 1887 } } } Thu Feb 12 2015 05:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 2020 } } } Thu Feb 12 2015 06:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 1802 } } } Thu Feb 12 2015 07:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 2759 } } } Thu Feb 12 2015 08:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 2308 } } } Thu Feb 12 2015 09:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 2026 } } } Thu Feb 12 2015 10:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 2428 } } } Thu Feb 12 2015 11:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 1847 } } } Thu Feb 12 2015 12:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 1873 } } } Thu Feb 12 2015 13:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 2681 } } } Thu Feb 12 2015 14:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 1651 } } } Thu Feb 12 2015 15:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 1785 } } } Thu Feb 12 2015 16:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 1820 } } } Thu Feb 12 2015 17:30:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { power: { average: { hour: 3010 } } } Thu Feb 12 2015 18:30:00 GMT+0100 (CET)
+[INFO] lib/eliq.js - Setting up eliq client { day: [Function: day], hour: [Function: hour] } using apiKey 28e ***
+[INFO] lib/graphite.js - logged { home: { power: { average: 1542 } } } Sat Feb 14 2015 18:09:00 GMT+0100 (CET)
+[INFO] lib/graphite.js - logged { home: { power: { average: 1478 } } } Sat Feb 14 2015 18:15:00 GMT+0100 (CET)
+[INFO] lib/graphite.js - logged { home: { power: { average: 2370 } } } Sat Feb 14 2015 18:21:00 GMT+0100 (CET)
+[INFO] lib/graphite.js - logged { home: { power: { average: 2185 } } } Sat Feb 14 2015 18:27:00 GMT+0100 (CET)
+[INFO] lib/graphite.js - logged { home: { power: { average: 2004 } } } Sat Feb 14 2015 18:33:00 GMT+0100 (CET)
+[INFO] lib/graphite.js - logged { home: { power: { average: 1775 } } } Sat Feb 14 2015 18:39:00 GMT+0100 (CET)
+[INFO] lib/graphite.js - logged { home: { power: { average: 1465 } } } Sat Feb 14 2015 18:45:00 GMT+0100 (CET)
+[INFO] lib/graphite.js - logged { home: { power: { average: 2140 } } } Sat Feb 14 2015 18:51:00 GMT+0100 (CET)
+[INFO] lib/graphite.js - logged { home: { power: { average: 1915 } } } Sat Feb 14 2015 18:57:00 GMT+0100 (CET)
+[INFO] lib/graphite.js - logged { home: { power: { average: 2160 } } } Sat Feb 14 2015 19:03:00 GMT+0100 (CET)
 ```
 
 ## Install
@@ -44,9 +37,9 @@ npm install eliq2graphite
 crontab -e
 ```
 
-Add this line to update average power every hour
+Add this line to update average power every 15 minute with a 6 minute resolution
 ```
-0 * * * * node <path to>/eliq2graphite/node_modules/.bin/eliq2graphite
+*/15 * * * * node <path to>/eliq2graphite/node_modules/.bin/eliq2graphite
 ```
 
 [npm-url]: https://npmjs.org/package/eliq2graphite
