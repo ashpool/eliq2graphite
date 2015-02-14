@@ -3,7 +3,6 @@ var gulp = require('gulp'),
 	mocha = require('gulp-mocha');
 
 gulp.task('default', ['lint', 'test'], function () {
-	// place code for your default task here
 });
 
 gulp.task('lint', function () {
