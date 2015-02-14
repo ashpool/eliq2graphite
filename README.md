@@ -1,5 +1,5 @@
 # eliq2graphite
-Fetches energy consumption from eliq and forwards them to Graphite.
+Fetches power consumption from eliq and forwards them to Graphite.
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
@@ -37,9 +37,9 @@ npm install eliq2graphite
 crontab -e
 ```
 
-Add this line to update average power every 15 minute with a 6 minute resolution
+Add this line to update average power every minute with a 6 minute resolution
 ```
-*/15 * * * * node <path to>/eliq2graphite/node_modules/.bin/eliq2graphite
+* * * * * node <path to>/eliq2graphite/node_modules/.bin/eliq2graphite
 ```
 
 [npm-url]: https://npmjs.org/package/eliq2graphite
