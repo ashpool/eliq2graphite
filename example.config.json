@@ -1,4 +1,5 @@
 {
   "eliqAccesstoken": "...",
-  "graphiteUrl": "plaintext://127.0.0.1:2003/"
+  "graphiteUrl": "plaintext://127.0.0.1:2003/",
+  "format": "home.power.average"
 }
