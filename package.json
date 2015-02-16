@@ -29,8 +29,9 @@
   },
   "homepage": "https://github.com/ashpool/eliq2graphite",
   "dependencies": {
-    "graphite": "git://github.com/ashpool/node-graphite.git#master",
+    "graphite": "git://github.com/ashpool/node-graphite.git#v0.0.8",
     "log4js": "^0.6.22",
+    "log4js-extras": "git://github.com/ashpool/log4js-extras.git#v0.0.2",
     "moment": "^2.9.0",
     "request": "^2.53.0",
     "rsvp": "^3.0.16"
