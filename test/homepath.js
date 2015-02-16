@@ -8,7 +8,7 @@ describe('homepath', function () {
 	describe('#path', function () {
 		it('returns the path of the home depending on the current platform', function () {
 			process.platform === 'darwin' && expect(home.path()).to.equal(process.env.HOME);
-			process.platform === 'linux' && expect(home.path()).to.equal(process.env.HOMEPATH || undefined); // undefined on travis
+			process.platform === 'linux' && process.env.HOMEPATH && expect(home.path()).to.equal(process.env.HOMEPATH);
 			process.platform === 'win32' && expect(home.path()).to.equal(process.env.USERPROFILE);
 		});
 	});
