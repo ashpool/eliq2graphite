@@ -1,4 +1,5 @@
 /*jshint undef:false */
+/*jshint -W030 */
 var chai = require('chai'),
 	expect = chai.expect,
 	home = require('../lib/homepath');
