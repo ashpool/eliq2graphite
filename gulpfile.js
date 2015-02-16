@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 	jshint = require('gulp-jshint'),
-	mocha = require('gulp-mocha');
+	mocha = require('gulp-mocha'),
+	cover = require('gulp-coverage');
 
 gulp.task('default', ['lint', 'test'], function () {
 });
@@ -13,5 +14,14 @@ gulp.task('lint', function () {
 
 gulp.task('test', function () {
 	return gulp.src('./test', {read: false})
-		.pipe(mocha({reporter: 'nyan'}));
+		.pipe(cover.instrument({
+			pattern: ['*lib/*.js'],
+			debugDirectory: 'debug'
+		}))
+		.pipe(mocha({reporter: 'nyan'}))
+		.pipe(cover.gather())
+		.pipe(cover.format())
+		.pipe(gulp.dest('reports'));
 });
+
+
