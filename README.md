@@ -4,7 +4,6 @@ Fetches power consumption from eliq and forwards them to Graphite.
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
 ```
-[INFO] lib/eliq.js - Setting up eliq client { day: [Function: day], hour: [Function: hour] } using apiKey 28e ***
 [INFO] lib/graphite.js - logged { home: { power: { average: 1542 } } } Sat Feb 14 2015 18:09:00 GMT+0100 (CET)
 [INFO] lib/graphite.js - logged { home: { power: { average: 1478 } } } Sat Feb 14 2015 18:15:00 GMT+0100 (CET)
 [INFO] lib/graphite.js - logged { home: { power: { average: 2370 } } } Sat Feb 14 2015 18:21:00 GMT+0100 (CET)
@@ -27,7 +26,8 @@ npm install eliq2graphite
 ```
 {
   "eliqAccesstoken": "...",
-  "graphiteUrl": "plaintext://127.0.0.1:2003/"
+  "graphiteUrl": "plaintext://127.0.0.1:2003/",
+   "format": "home.power.average"
 }
 ```
 
