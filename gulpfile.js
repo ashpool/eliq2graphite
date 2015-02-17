@@ -23,5 +23,3 @@ gulp.task('test', function () {
 		.pipe(cover.format())
 		.pipe(gulp.dest('reports'));
 });
-
-
