@@ -3,19 +3,6 @@ Fetches power consumption from ELIQ and forwards them to Graphite.
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
-```
-[INFO] lib/graphite.js - logged { home: { power: { average: 1542 } } } Sat Feb 14 2015 18:09:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { home: { power: { average: 1478 } } } Sat Feb 14 2015 18:15:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { home: { power: { average: 2370 } } } Sat Feb 14 2015 18:21:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { home: { power: { average: 2185 } } } Sat Feb 14 2015 18:27:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { home: { power: { average: 2004 } } } Sat Feb 14 2015 18:33:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { home: { power: { average: 1775 } } } Sat Feb 14 2015 18:39:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { home: { power: { average: 1465 } } } Sat Feb 14 2015 18:45:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { home: { power: { average: 2140 } } } Sat Feb 14 2015 18:51:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { home: { power: { average: 1915 } } } Sat Feb 14 2015 18:57:00 GMT+0100 (CET)
-[INFO] lib/graphite.js - logged { home: { power: { average: 2160 } } } Sat Feb 14 2015 19:03:00 GMT+0100 (CET)
-```
-
 ## Install
 npm install eliq2graphite
 
@@ -31,6 +18,8 @@ npm install eliq2graphite
    "logLevel": "INFO"
 }
 ```
+### Formatting
+The format string can be anything, e.g ``home.power.average``
 
 ## Usage
 
