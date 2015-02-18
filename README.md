@@ -1,5 +1,5 @@
 # eliq2graphite
-Fetches power consumption from eliq and forwards them to Graphite.
+Fetches power consumption from ELIQ and forwards them to Graphite.
 
 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url] [![Build Status][travis-image]][travis-url]
 
