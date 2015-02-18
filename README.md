@@ -14,7 +14,7 @@ npm install eliq2graphite
 {
   "eliqAccesstoken": "...",
   "graphiteUrl": "plaintext://127.0.0.1:2003/",
-   "format": "home.power.average",
+   "format": "power.average",
    "logLevel": "INFO"
 }
 ```
