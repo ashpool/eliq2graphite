@@ -5,6 +5,5 @@ node_js:
   - "0.10"
 os:
   - linux
-  - osx
 before_install:
   - npm install -g "npm@^2.0.0"

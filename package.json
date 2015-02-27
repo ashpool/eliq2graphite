@@ -9,7 +9,9 @@
     "lib": "./lib"
   },
   "bin": {
-    "eliq2graphite": "./bin/eliq2graphite.js"
+    "eliq2graphite": "./bin/eliq2graphite.js",
+    "eliq2graphite-day": "./bin/day.js",
+    "eliq2graphite-hour": "./bin/hour.js"
   },
   "scripts": {
     "test": "gulp test"
@@ -32,7 +34,7 @@
     "graphite": "git://github.com/ashpool/node-graphite.git#v0.0.8",
     "log4js": "^0.6.22",
     "log4js-extras": "git://github.com/ashpool/log4js-extras.git#v0.0.2",
-    "eliq-promise": "git://github.com/ashpool/eliq-promise.git#master",
+    "eliq-promise": "^0.0.4",
     "request": "^2.53.0",
     "rsvp": "^3.0.16"
   },
