@@ -28,12 +28,12 @@ crontab -e
 ```
 Fetch average power for this hour with 6 minutes resolution
 ```
-*/6 * * * * node <path to>/eliq2graphite/node_modules/.bin/day
+*/6 * * * * node <path to>/eliq2graphite/node_modules/eliq2graphite/bin/hour
 ```
 
 Fetch average power for today with 1 hour resolution
 ```
-0 * * * * node <path to>/eliq2graphite/node_modules/.bin/day
+0 * * * * node <path to>/eliq2graphite/node_modules/eliq2graphite/bin/day
 ```
 
 [npm-url]: https://npmjs.org/package/eliq2graphite
