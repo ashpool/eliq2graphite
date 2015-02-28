@@ -3,4 +3,4 @@ var home = require('./../lib/homepath'),
     eliq = require('eliq-promise')(config),
     graphite = require('./../lib/graphite')(config);
 
-eliq.getToday().then(graphite.log);
+eliq.getToday().then(graphite.log).catch(console.log);

@@ -26,10 +26,14 @@ The format string can be anything, e.g ``home.power.average``
 ```
 crontab -e
 ```
-
-Add this line to update average power every minute with a 6 minute resolution
+Fetch average power for this hour with 6 minutes resolution
 ```
-* * * * * node <path to>/eliq2graphite/node_modules/.bin/eliq2graphite
+*/6 * * * * node <path to>/eliq2graphite/node_modules/.bin/day
+```
+
+Fetch average power for today with 1 hour resolution
+```
+0 * * * * node <path to>/eliq2graphite/node_modules/.bin/day
 ```
 
 [npm-url]: https://npmjs.org/package/eliq2graphite

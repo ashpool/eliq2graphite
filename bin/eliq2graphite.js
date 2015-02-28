@@ -1,1 +1,2 @@
+/* Deprecated */
 require('./day');
