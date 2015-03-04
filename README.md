@@ -24,16 +24,29 @@ The format string can be anything, e.g ``home.power.average``
 ## Usage
 
 ```
+eliq2graphite [--age number-of-hours] [--resolution hour|6min]
+```
+
+### Options
+
+* -a, --age=number of hours (default 2 hours)
+* -r, --resolution=hour|6min (default 6min)
+* -h, --help (show this)
+
+
+### Examples
+```
 crontab -e
 ```
-Fetch average power for this hour with 6 minutes resolution
+
+Fetch average power for 3 hours with 6 minutes resolution
 ```
-*/6 * * * * node <path to>/eliq2graphite/node_modules/eliq2graphite/bin/hour
+*/6 * * * * node <path to>/eliq2graphite/.bin/eliq2graphite -a 3 -r 6min
 ```
 
 Fetch average power for today with 1 hour resolution
 ```
-0 * * * * node <path to>/eliq2graphite/node_modules/eliq2graphite/bin/day
+0 * * * * node <path to>/eliq2graphite/.bin/eliq2graphite -a 24 -r hour
 ```
 
 [npm-url]: https://npmjs.org/package/eliq2graphite

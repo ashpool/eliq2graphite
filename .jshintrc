@@ -18,5 +18,6 @@
   "maxdepth": 3,
   "maxlen": 140,
   "node": true,
-  "esnext": true
+  "esnext": true,
+  "multistr": true
 }
