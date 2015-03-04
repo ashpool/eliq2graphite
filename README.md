@@ -43,17 +43,17 @@ crontab -e
 
 Fetch average power:
 
-...default settings: last 2 hours with 6 minutes resolution
+... default settings: last 2 hours with 6 minutes resolution
 ```
 */6 * * * * node <path to>/eliq2graphite/.bin/eliq2graphite
 ```
 
-...last 3 hours with 6 minutes resolution
+... last 3 hours with 6 minutes resolution
 ```
 */6 * * * * node <path to>/eliq2graphite/.bin/eliq2graphite -a 3 -r 6min
 ```
 
-...last 24 hours with 1 hour resolution
+... last 24 hours with 1 hour resolution
 ```
 0 * * * * node <path to>/eliq2graphite/.bin/eliq2graphite --age 24 --resolution hour
 ```
