@@ -35,6 +35,8 @@ eliq2graphite [--age number-of-hours] [--resolution hour|6min]
 
 
 ### Examples
+
+``eliq2graphite`` is ideally run as a cron job
 ```
 crontab -e
 ```
