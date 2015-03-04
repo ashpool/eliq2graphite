@@ -1,6 +1,6 @@
 {
   "name": "eliq2graphite",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Fetches energy consumption from Eliq and forwards them to Graphite",
   "main": "bin/eliq2graphite",
   "preferGlobal": "true",
