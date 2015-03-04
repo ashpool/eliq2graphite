@@ -39,14 +39,19 @@ eliq2graphite [--age number-of-hours] [--resolution hour|6min]
 crontab -e
 ```
 
-Fetch average power for 3 hours with 6 minutes resolution
+Fetch average power with default settings: last 2 hours with 6 minutes resolution
+```
+*/6 * * * * node <path to>/eliq2graphite/.bin/eliq2graphite
+```
+
+Fetch average power for the last 3 hours with 6 minutes resolution
 ```
 */6 * * * * node <path to>/eliq2graphite/.bin/eliq2graphite -a 3 -r 6min
 ```
 
-Fetch average power for today with 1 hour resolution
+Fetch average power for last 24 hours with 1 hour resolution
 ```
-0 * * * * node <path to>/eliq2graphite/.bin/eliq2graphite -a 24 -r hour
+0 * * * * node <path to>/eliq2graphite/.bin/eliq2graphite --age 24 --resolution hour
 ```
 
 [npm-url]: https://npmjs.org/package/eliq2graphite
