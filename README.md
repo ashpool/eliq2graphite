@@ -30,7 +30,7 @@ eliq2graphite [--age number-of-hours] [--resolution hour|6min]
 ### Options
 
 * -a, --age=number of hours (default 2 hours)
-* -r, --resolution=hour|6min (default 6min)
+* -r, --resolution=6min|hour|day (default 6min)
 * -h, --help (show this)
 
 
