@@ -14,12 +14,12 @@ npm install eliq2graphite
 {
   "eliqAccesstoken": "...",
   "graphiteUrl": "plaintext://127.0.0.1:2003/",
-  "format": "power.average",
+  "format": "eliq",
   "logLevel": "INFO"
 }
 ```
 ### Formatting
-The format string can be anything, e.g ``home.power.average``
+The format string can be anything, e.g ``home.power``
 
 ## Usage
 
@@ -37,11 +37,12 @@ eliq2graphite [--age number-of-hours] [--resolution hour|6min]
 ### Examples
 
 ``eliq2graphite`` is ideally run as a cron job
+
 ```
 crontab -e
 ```
 
-Fetch average power:
+Fetch energy and average power:
 
 ... default settings: last 2 hours with 6 minutes resolution
 ```
@@ -56,6 +57,11 @@ Fetch average power:
 ... last 24 hours with 1 hour resolution
 ```
 0 * * * * node <path to>/eliq2graphite/.bin/eliq2graphite --age 24 --resolution hour
+```
+
+... last 4 days with 1 day resolution
+```
+0 0 * * * node <path to>/eliq2graphite/.bin/eliq2graphite --age 96 --resolution day
 ```
 
 [npm-url]: https://npmjs.org/package/eliq2graphite
