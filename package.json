@@ -1,6 +1,6 @@
 {
   "name": "eliq2graphite",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fetches energy consumption from Eliq and forwards them to Graphite",
   "main": "bin/eliq2graphite",
   "preferGlobal": "true",
@@ -9,9 +9,7 @@
     "lib": "./lib"
   },
   "bin": {
-    "eliq2graphite": "./bin/eliq2graphite.js",
-    "eliq2graphite-day": "./bin/day.js",
-    "eliq2graphite-hour": "./bin/hour.js"
+    "eliq2graphite": "./bin/eliq2graphite.js"
   },
   "scripts": {
     "test": "gulp test"
