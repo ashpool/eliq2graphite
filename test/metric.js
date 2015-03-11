@@ -1,6 +1,7 @@
 /*jshint undef:false */
 var chai = require('chai'),
-    expect = chai.expect;
+    expect = chai.expect,
+    metric = require('../lib/metric');
 
 describe('metric', function () {
     describe('#create', function () {
@@ -9,8 +10,7 @@ describe('metric', function () {
                 value = {
                     avgpower: 1337,
                     energy: 1234
-                },
-                metric = require('../lib/metric');
+                };
             expect(metric.create(format, value).eliq.avgpower).to.equal(1337);
             expect(metric.create(format, value).eliq.energy).to.equal(1234);
         });
@@ -19,8 +19,7 @@ describe('metric', function () {
                 value = {
                     avgpower: 43,
                     energy: 44
-                },
-                metric = require('../lib/metric');
+                };
             expect(metric.create(format, value).fuu.bar.boo.baz.fuz.foz.avgpower).to.equal(43);
             expect(metric.create(format, value).fuu.bar.boo.baz.fuz.foz.energy).to.equal(44);
         });
@@ -29,11 +28,23 @@ describe('metric', function () {
                 value = {
                     avgpower: 1234,
                     energy: 4321
-                },
-                metric = require('../lib/metric');
-            console.log(metric.create(format, value));
+                };
             expect(metric.create(format, value).averagepower.avgpower).to.equal(1234);
             expect(metric.create(format, value).averagepower.energy).to.equal(4321);
+        });
+        it('reqognizes power, avgpower, and energy', function () {
+            var data = {power: 1285, avgpower: 1337, energy: 42},
+                m = metric.create('for.mat', data);
+            expect(m.for.mat.power).to.equal(1285);
+            expect(m.for.mat.avgpower).to.equal(1337);
+            expect(m.for.mat.energy).to.equal(42);
+        });
+        it('actually reqognizes whatever property that is put in data', function () {
+            var data = {foo: 1285, bar: 1337, fuu: 42},
+                m = metric.create('for.mat', data);
+            expect(m.for.mat.foo).to.equal(1285);
+            expect(m.for.mat.bar).to.equal(1337);
+            expect(m.for.mat.fuu).to.equal(42);
         });
     });
 });
