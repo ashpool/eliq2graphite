@@ -8,7 +8,9 @@ npm install eliq2graphite
 
 ## Setup
 
-``~/.eliq2graphite/config.json``
+```Bash
+~/.eliq2graphite/config.json
+```
 
 ```Javascript
 {
