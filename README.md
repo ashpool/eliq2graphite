@@ -10,7 +10,7 @@ npm install eliq2graphite
 
 ``~/.eliq2graphite/config.json``
 
-```
+```Javascript
 {
   "eliqAccesstoken": "...",
   "graphiteUrl": "plaintext://127.0.0.1:2003/",
