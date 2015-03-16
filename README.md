@@ -25,7 +25,7 @@ The format string can be anything, e.g ``home.power``
 
 ## Usage
 
-```
+```Bash
 eliq2graphite [--age number-of-hours] [--resolution hour|6min]
 ```
 
@@ -40,29 +40,29 @@ eliq2graphite [--age number-of-hours] [--resolution hour|6min]
 
 ``eliq2graphite`` is ideally run as a cron job
 
-```
+```Bash
 crontab -e
 ```
 
 Fetch energy and average power:
 
 ... default settings: last 2 hours with 6 minutes resolution
-```
+```Bash
 */6 * * * * node <path to>/eliq2graphite/.bin/eliq2graphite
 ```
 
 ... last 3 hours with 6 minutes resolution
-```
+```Bash
 */6 * * * * node <path to>/eliq2graphite/.bin/eliq2graphite -a 3 -r 6min
 ```
 
 ... last 24 hours with 1 hour resolution
-```
+```Bash
 0 * * * * node <path to>/eliq2graphite/.bin/eliq2graphite --age 24 --resolution hour
 ```
 
 ... last 4 days with 1 day resolution
-```
+```Bash
 0 0 * * * node <path to>/eliq2graphite/.bin/eliq2graphite --age 96 --resolution day
 ```
 
