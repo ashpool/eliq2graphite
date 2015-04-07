@@ -18,9 +18,5 @@ Options: \n\
 if (argv.h || argv.help) {
     console.log(usage);
 } else {
-    eliq.getFrom(24 || argv.a || argv.age || 2, 'hour' || argv.r || argv.resolution || '6min').then(function (value) {
-        graphite.log(value)
-    }, function (value) {
-        logger.error(value);
-    });
+    eliq.getFrom(24 || argv.a || argv.age || 2, 'hour' || argv.r || argv.resolution || '6min').then(graphite.log).catch(logger.error);
 }
