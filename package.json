@@ -29,8 +29,8 @@
   },
   "homepage": "https://github.com/ashpool/eliq2graphite",
   "dependencies": {
-    "eliq-promise": "^0.1.1",
-    "graphite-promise": "^0.0.3",
+    "eliq-promise": "^0.2.1",
+    "graphite-promise": "^0.0.6",
     "lodash": "^3.6.0",
     "log4js": "^0.6.22",
     "log4js-extras": "git://github.com/ashpool/log4js-extras.git#v0.0.2",
