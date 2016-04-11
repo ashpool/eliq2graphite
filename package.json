@@ -1,39 +1,44 @@
 {
   "name": "eliq2graphite",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Fetches energy consumption from Eliq and forwards them to Graphite",
-  "main": "bin/eliq2graphite",
-  "preferGlobal": "true",
-  "directories": {
-    "bin": "./bin",
-    "lib": "./lib"
+  "keywords": [
+    "eliq",
+    "graphite"
+  ],
+  "homepage": "https://github.com/ashpool/eliq2graphite",
+  "bugs": {
+    "url": "https://github.com/ashpool/eliq2graphite/issues"
   },
+  "license": "MIT",
+  "author": "Magnus Ljadas <magnus.ljadas@gmail.com> (https://github.com/ashpool)",
+  "contributors": {
+    "name": "Magnus Ljadas <magnus.ljadas@gmail.com> (https://github.com/ashpool)"
+  },
+  "main": "bin/eliq2graphite",
   "bin": {
     "eliq2graphite": "./bin/eliq2graphite.js"
-  },
-  "scripts": {
-    "test": "gulp test"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ashpool/eliq2graphite.git"
   },
-  "keywords": [
-    "eliq",
-    "graphite"
-  ],
-  "author": "Magnus Ljadas <magnus.ljadas@gmail.com> (https://github.com/ashpool)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ashpool/eliq2graphite/issues"
+  "directories": {
+    "bin": "./bin",
+    "lib": "./lib"
   },
-  "homepage": "https://github.com/ashpool/eliq2graphite",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "preferGlobal": true,
+  "engines": {
+    "node": ">=4.6.2"
+  },
   "dependencies": {
-    "eliq-promise": "^0.2.2",
-    "graphite-promise": "^0.1.0",
+    "eliq-promise": "^0.2.3",
+    "graphite-promise": "^0.1.1",
     "lodash": "^4.9.0",
     "log4js": "^0.6.33",
-    "log4js-extras": "git://github.com/ashpool/log4js-extras.git#v0.0.2",
     "minimist": "^1.1.0",
     "request": "^2.70.0",
     "rsvp": "^3.2.1"
