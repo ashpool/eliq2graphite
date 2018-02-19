@@ -1,9 +1,10 @@
-var argv = require('minimist')(process.argv.slice(2)),
-  home = require('./../lib/homepath'),
-  config = require(home.path() + '/.eliq2graphite/config.json'),
-  eliq = require('eliq-promise')(config),
-  logger = require('./../lib/logger')(config).getLogger(__filename),
-  graphite = require('./../lib/graphite')(config);
+const fs = require('fs');
+const argv = require('minimist')(process.argv.slice(2));
+const home = require('./../lib/homepath');
+const configPath = home.path() + '/.eliq2graphite/config.json';
+const config = fs.existsSync(configPath) ? require(configPath) : process.env;
+const eliq = require('eliq-promise')(config);
+const graphite = require('./../lib/graphite')(config);
 
 var usage = '\
 Usage: \n\
@@ -18,5 +19,5 @@ Options: \n\
 if (argv.h || argv.help) {
   console.log(usage);
 } else {
-  eliq.getFrom(argv.a || argv.age || 2, argv.r || argv.resolution || '6min').then(graphite.log).catch(logger.error);
+  eliq.getFrom(argv.a || argv.age || 2, argv.r || argv.resolution || '6min').then(graphite.log).catch(console.error);
 }
