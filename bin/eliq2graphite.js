@@ -1,8 +1,5 @@
-const fs = require('fs');
 const argv = require('minimist')(process.argv.slice(2));
-const home = require('./../lib/homepath');
-const configPath = home.path() + '/.eliq2graphite/config.json';
-const config = fs.existsSync(configPath) ? require(configPath) : process.env;
+const config = process.env;
 const eliq = require('eliq-promise')(config);
 const graphite = require('./../lib/graphite')(config);
 
