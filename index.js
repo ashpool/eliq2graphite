@@ -1,2 +1,2 @@
-require('bin/eliq2graphite');
+require('./bin/eliq2graphite');
 
