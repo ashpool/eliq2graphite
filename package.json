@@ -1,6 +1,6 @@
 {
   "name": "eliq2graphite",
-  "version": "0.2.10",
+  "version": "1.0.0",
   "description": "Fetches energy consumption from Eliq and forwards them to Graphite",
   "keywords": [
     "eliq",
@@ -32,11 +32,11 @@
   },
   "preferGlobal": true,
   "engines": {
-    "node": ">=4.6.2"
+    "node": ">=9.5.0"
   },
   "dependencies": {
-    "eliq-promise": "^0.2.6",
-    "graphite-promise": "^0.1.3",
+    "eliq-promise": "^1.0.0",
+    "graphite-promise": "^1.0.0",
     "minimist": "^1.1.0",
     "request": "^2.83.0"
   },
