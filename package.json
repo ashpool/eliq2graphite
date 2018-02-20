@@ -37,17 +37,16 @@
   "dependencies": {
     "eliq-promise": "^0.2.6",
     "graphite-promise": "^0.1.3",
-    "log4js": "^0.6.33",
     "minimist": "^1.1.0",
-    "request": "^2.71.0"
+    "request": "^2.83.0"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
+    "chai": "^4.1.2",
     "gulp": "^3.9.1",
     "gulp-coverage": "^0.3.38",
-    "gulp-jshint": "^2.0.0",
-    "gulp-mocha": "^2.2.0",
-    "jshint": "^2.0.0",
-    "mocha": "^2.4.5"
+    "gulp-jshint": "^2.1.0",
+    "gulp-mocha": "^5.0.0",
+    "jshint": "^2.9.5",
+    "mocha": "^5.0.1"
   }
 }
