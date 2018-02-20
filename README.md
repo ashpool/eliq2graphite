@@ -8,18 +8,13 @@ npm install eliq2graphite
 
 ## Setup
 
-```Bash
-~/.eliq2graphite/config.json
+Environment variables
+```bash
+eliqAccesstoken=...
+graphiteUrl=plaintext://127.0.0.1:2003/
+format=eliq
 ```
 
-```Javascript
-{
-  "eliqAccesstoken": "...",
-  "graphiteUrl": "plaintext://127.0.0.1:2003/",
-  "format": "eliq",
-  "logLevel": "INFO"
-}
-```
 ### Formatting
 The format string can be anything, e.g ``home.power``
 
