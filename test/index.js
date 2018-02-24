@@ -1,2 +1,2 @@
+require('./graphite');
 require('./metric');
-

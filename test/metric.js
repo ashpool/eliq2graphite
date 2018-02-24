@@ -1,6 +1,5 @@
-/*jshint undef:false */
-var chai = require('chai'),
-  expect = chai.expect;
+const chai = require('chai');
+const expect = chai.expect;
 
 describe('metric', function() {
   describe('#create', function() {
