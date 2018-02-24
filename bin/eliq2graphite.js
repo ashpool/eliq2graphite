@@ -17,7 +17,7 @@ Options: \n\
 if (argv.h || argv.help) {
   console.log(usage);
 } else if (argv.n || argv.now) {
-  eliq.getNow().then(graphite.logSnapshot).catch(console.error);
+  eliq.getNow().then(graphite.logSnapshot).then(console.log).catch(console.error);
 } else {
-  eliq.getFrom(argv.a || argv.age || 2, argv.r || argv.resolution || '6min').then(graphite.log).catch(console.error);
+  eliq.getFrom(argv.a || argv.age || 2, argv.r || argv.resolution || '6min').then(graphite.log).then(console.log).catch(console.error);
 }
