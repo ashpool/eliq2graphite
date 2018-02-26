@@ -36,7 +36,8 @@
   },
   "dependencies": {
     "eliq-promise": "^1.0.1",
-    "graphite-promise": "^1.0.1"
+    "graphite-promise": "^1.0.1",
+    "minimist": "^1.1.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
