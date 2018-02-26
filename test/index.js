@@ -1,3 +1,2 @@
-require('./homepath');
+require('./graphite');
 require('./metric');
-
