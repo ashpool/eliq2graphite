@@ -11,8 +11,9 @@ npm install eliq2graphite
 Environment variables
 ```bash
 eliqAccesstoken=...
-graphiteUrl=plaintext://127.0.0.1:2003/
 format=eliq
+hostedGraphiteKey=... (optional)
+url=plaintext://127.0.0.1:2003/
 ```
 
 ### Formatting
@@ -28,6 +29,7 @@ eliq2graphite [--age number-of-hours] [--resolution hour|6min]
 
 * -a, --age=number of hours (default 2 hours)
 * -r, --resolution=6min|hour|day (default 6min)
+* -n, --now
 * -h, --help (show this)
 
 
