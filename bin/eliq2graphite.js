@@ -1,7 +1,11 @@
 const argv = require('minimist')(process.argv.slice(2));
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').load();
+}
 const config = process.env;
 const eliq = require('eliq-promise')(config);
 const graphite = require('./../lib/graphite')(config);
+
 
 const usage = '\
 Usage: \n\
