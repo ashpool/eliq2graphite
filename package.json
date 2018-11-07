@@ -1,7 +1,7 @@
 {
   "name": "eliq2graphite",
-  "version": "1.1.2",
-  "description": "Fetches energy consumption from Eliq and forwards them to Graphite",
+  "version": "1.2.0",
+  "description": "Fetches energy consumption from Eliq and forwards it to Graphite",
   "keywords": [
     "eliq",
     "graphite"
@@ -12,9 +12,11 @@
   },
   "license": "MIT",
   "author": "Magnus Ljadas <magnus.ljadas@gmail.com> (https://github.com/ashpool)",
-  "contributors": {
-    "name": "Magnus Ljadas <magnus.ljadas@gmail.com> (https://github.com/ashpool)"
-  },
+  "contributors": [
+    {
+      "name": "Magnus Ljadas <magnus.ljadas@gmail.com> (https://github.com/ashpool)"
+    }
+  ],
   "main": "bin/eliq2graphite",
   "bin": {
     "eliq2graphite": "./bin/eliq2graphite.js"
@@ -28,23 +30,21 @@
     "lib": "./lib"
   },
   "scripts": {
-    "test": "gulp test"
+    "test": "mocha"
   },
   "preferGlobal": true,
   "engines": {
-    "node": ">=9.5.0"
+    "node": ">=8"
   },
   "dependencies": {
-    "dotenv": "^5.0.1",
-    "eliq-promise": "^1.0.1",
-    "graphite-promise": "^1.0.1",
-    "minimist": "^1.1.0"
+    "dotenv": "^6.1.0",
+    "eliq-promise": "^1.0.2",
+    "graphite-promise": "^1.0.2",
+    "minimist": "^1.2.0"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "gulp": "^3.9.1",
-    "gulp-mocha": "^5.0.0",
-    "mocha": "^5.0.1",
-    "sinon": "^4.4.0"
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "sinon": "^7.1.1"
   }
 }

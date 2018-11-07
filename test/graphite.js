@@ -1,10 +1,10 @@
-const chai = require('chai');
 const sinon = require('sinon');
+const chai = require('chai');
 const expect = chai.expect;
 
 describe('graphite', function () {
     describe('#logSnapshot', function () {
-        it('logs a single snapshot power measurement', function () {
+        it('logs a single snapshot power measurement', function (done) {
             const snapshot = {
                 createddate: '2018-02-23T16:15:44',
                 power: 2661
@@ -13,15 +13,19 @@ describe('graphite', function () {
             const client = { write: stub.resolves({}) };
             const config = { client: client };
             const graphite = require('../lib/graphite')(config);
-            graphite.logSnapshot(snapshot);
-
-            expect(client.write.calledOnce).to.be.true;
-            expect(client.write.calledWith({ eliq: { snapshot: { power: 2661 } } }, 1519398944000)).to.be.true;
+            graphite.logSnapshot(snapshot).then(() => {
+              expect(client.write.calledOnce).to.be.true;
+              expect(client.write.calledWith({ eliq: { snapshot: { power: 2661 } } }, 1519398944000)).to.be.true;
+              done();
+            }, function(error) {
+              assert.fail(error);
+              done();
+            });
         });
     });
 
     describe('#log', function () {
-        it('logs a bunch of measurements', function () {
+        it('logs a bunch of measurements', function (done) {
             const period = {
                 startdate: '2015-02-12T00:00:00',
                 enddate: '2015-02-13T00:00:00',
@@ -46,11 +50,16 @@ describe('graphite', function () {
             const client = { write: stub.resolves({}) };
             const config = { client: client };
             const graphite = require('../lib/graphite')(config);
-            graphite.log(period);
+            graphite.log(period).then(() => {
+              expect(client.write.calledTwice).to.be.true;
+              expect(client.write.calledWith({ eliq: { hour: { avgpower: 1710, energy: 1709 } } }, 1423697400000)).to.be.true;
+              expect(client.write.calledWith({ eliq: { hour: { avgpower: 1820, energy: 1821 } } }, 1423755000000)).to.be.true;
+              done();
+            }, function(error) {
+              assert.fail(error);
+              done();
+            });;
 
-            expect(client.write.calledTwice).to.be.true;
-            expect(client.write.calledWith({ eliq: { hour: { avgpower: 1710, energy: 1709 } } }, 1423697400000)).to.be.true;
-            expect(client.write.calledWith({ eliq: { hour: { avgpower: 1820, energy: 1821 } } }, 1423755000000)).to.be.true;
         });
     });
 })
