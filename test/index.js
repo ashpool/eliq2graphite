@@ -1,2 +1,0 @@
-require('./graphite');
-require('./metric');
