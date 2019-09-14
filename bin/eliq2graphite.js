@@ -1,4 +1,4 @@
-import graphite from './../lib/graphite';
+import graphite from '../src/graphite';
 import eliq from 'eliq-promise';
 
 const argv = require('minimist')(process.argv.slice(2));

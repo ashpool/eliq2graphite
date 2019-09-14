@@ -13,7 +13,7 @@ describe('graphite', () => {
       const stub = sinon.stub();
       const client = { write: stub.resolves({}) };
       const config = { client: client };
-      const graphite = require('../lib/graphite')(config);
+      const graphite = require('../src/graphite')(config);
       graphite.logSnapshot(snapshot).then(() => {
         //expect(client.write.calledOnce).to.be.true;
         //expect(client.write.calledWith({ eliq: { snapshot: { power: 2661 } } }, 1519398944000)).to.be.true;
@@ -50,7 +50,7 @@ describe('graphite', () => {
       const stub = sinon.stub();
       const client = { write: stub.resolves({}) };
       const config = { client: client };
-      const graphite = require('../lib/graphite')(config);
+      const graphite = require('../src/graphite')(config);
       graphite.log(period).then(() => {
         //expect(client.write.calledTwice).to.be.true;
         //expect(client.write.calledWith({ eliq: { hour: { avgpower: 1710, energy: 1709 } } }, 1423697400000)).to.be.true;

@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const metric = require('../lib/metric');
+const metric = require('../src/metric');
 
 describe('metric', function () {
   describe('#create', function () {
