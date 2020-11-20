@@ -1,0 +1,2 @@
+declare module 'graphite-promise';
+

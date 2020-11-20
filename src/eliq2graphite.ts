@@ -1,17 +1,13 @@
+import {Eliq} from 'eliq-promise';
+import {Graphite} from './graphite';
+
 const argv = require('minimist')(process.argv.slice(2));
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config();
 }
-const config = {
-  eliqAccesstoken: process.env['eliqAccesstoken'],
-  url: process.env['url'],
-  format: process.env['format'],
-  logLevel: process.env['logLevel'],
-}
-const { Graphite } = require('../build/graphite');
+const config = process.env;
+const eliqClient = new Eliq(config);
 const graphiteClient = new Graphite(config);
-const {EliqClient} = require('eliq-promise');
-const eliqClient = new EliqClient(config);
 
 const usage = '\
 Usage: \n\
@@ -24,7 +20,6 @@ Options: \n\
 -h, --help (show this)\
 \n';
 
-
 if (argv.h || argv.help) {
   console.log(usage);
 } else if (argv.n || argv.now) {
@@ -32,4 +27,3 @@ if (argv.h || argv.help) {
 } else {
   eliqClient.getFrom(argv.a || argv.age || 2, argv.r || argv.resolution || '6min').then(graphiteClient.log).then(console.log).catch(console.error);
 }
-
