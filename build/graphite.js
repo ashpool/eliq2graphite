@@ -1,33 +1,39 @@
 "use strict";
-const metric = require('./metric');
-const graphite = require('graphite-promise');
-module.exports = function (config) {
-    const format = config.format || 'eliq';
-    const client = config.client || graphite.createClient(config);
-    function log(period) {
-        return Promise.all(period.data.map(d => {
-            d.intervaltype = period.intervaltype;
-            d.timestamp = (new Date(d.time_start).getTime() + new Date(d.time_end).getTime()) / 2;
-            return d;
-        }).map(_log));
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Graphite = void 0;
+const graphite_promise_1 = require("graphite-promise");
+const metric_1 = __importDefault(require("./metric"));
+class Graphite {
+    constructor(config) {
+        this.format = config.format || 'eliq';
+        this.client = config.client || new graphite_promise_1.GraphiteClient(config);
     }
-    function logSnapshot(snapshot) {
-        snapshot.intervaltype = 'snapshot';
-        snapshot.timestamp = new Date(snapshot.createddate).getTime();
-        return _log(snapshot);
-    }
-    function _log(data) {
+    _log(data) {
+        const that = this;
         return new Promise(function (resolve, reject) {
-            var m = metric.create([format, data.intervaltype].join('.'), data);
-            client.write(m, data.timestamp).then(function (value) {
-                resolve(value);
+            const m = metric_1.default.create([that.format, data.intervaltype].join('.'), data);
+            return that.client.write(m, data.timestamp).then(function (value) {
+                return resolve(value);
             }, function (error) {
                 reject(error);
             });
         });
     }
-    return {
-        log: log,
-        logSnapshot: logSnapshot
-    };
-};
+    log(period) {
+        const that = this;
+        return Promise.all(period.data.map((d) => {
+            d.intervaltype = period.intervaltype;
+            d.timestamp = (new Date(d.time_start).getTime() + new Date(d.time_end).getTime()) / 2;
+            return d;
+        }).map(that._log));
+    }
+    logSnapshot(snapshot) {
+        snapshot.intervaltype = 'snapshot';
+        snapshot.timestamp = new Date(snapshot.createddate).getTime();
+        return this._log(snapshot);
+    }
+}
+exports.Graphite = Graphite;

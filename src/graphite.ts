@@ -1,37 +1,40 @@
-const metric = require('./metric');
-const graphite = require('graphite-promise');
+import {GraphiteClient} from 'graphite-promise';
+import metric from './metric';
+import {EliqData} from "./index";
 
-module.exports = function(config) {
-  const format = config.format || 'eliq';
-  const client = config.client || graphite.createClient(config);
+export class Graphite {
+  format: string;
+  client: any;
 
-  function log(period) {
-    return Promise.all(period.data.map(d => {
-      d.intervaltype = period.intervaltype;
-      d.timestamp = (new Date(d.time_start).getTime() + new Date(d.time_end).getTime()) / 2;
-      return d;
-    }).map(_log));
+  constructor(config: any) {
+    this.format = config.format || 'eliq';
+    this.client = config.client || new GraphiteClient(config);
   }
 
-  function logSnapshot(snapshot) {
-    snapshot.intervaltype = 'snapshot';
-    snapshot.timestamp = new Date(snapshot.createddate).getTime();
-    return _log(snapshot);
-  }
-
-  function _log(data) {
-    return new Promise(function(resolve, reject) {
-      var m = metric.create([format, data.intervaltype].join('.'), data);
-      client.write(m, data.timestamp).then(function(value) {
-        resolve(value);
-      }, function(error) {
+  _log(data: any): Promise<any>  {
+    const that = this;
+    return new Promise(function (resolve, reject) {
+      const m = metric.create([that.format, data.intervaltype].join('.'), data);
+      return that.client.write(m, data.timestamp).then(function (value: any) {
+        return resolve(value);
+      }, function (error: any) {
         reject(error);
       });
     });
   }
 
-  return {
-    log: log,
-    logSnapshot: logSnapshot
-  };
-};
+  log(period: any): Promise<any>  {
+    const that = this;
+    return Promise.all(period.data.map((d: EliqData) => {
+      d.intervaltype = period.intervaltype;
+      d.timestamp = (new Date(d.time_start).getTime() + new Date(d.time_end).getTime()) / 2;
+      return d;
+    }).map(that._log));
+  }
+
+  logSnapshot(snapshot: any): Promise<any> {
+    snapshot.intervaltype = 'snapshot';
+    snapshot.timestamp = new Date(snapshot.createddate).getTime();
+    return this._log(snapshot);
+  }
+}
