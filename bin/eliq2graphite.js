@@ -8,7 +8,7 @@ const config = {
   format: process.env['format'],
   logLevel: process.env['logLevel'],
 }
-const { Graphite } = require('../build/graphite');
+const { Graphite } = require('../build');
 const graphiteClient = new Graphite(config);
 const {EliqClient} = require('eliq-promise');
 const eliqClient = new EliqClient(config);

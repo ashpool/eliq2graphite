@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+// @ts-ignore
 const eliq_promise_1 = require("eliq-promise");
 const graphite_1 = require("./graphite");
 const argv = require('minimist')(process.argv.slice(2));
