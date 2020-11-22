@@ -1,12 +1,18 @@
 {
   "compilerOptions": {
     "allowJs": false,
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "lib": [
+      "es2018",
+      "dom"
+    ],
     "module": "commonjs",
     "outDir": "./build",
+    "resolveJsonModule": true,
     "strict": true,
-    "target": "es6"
+    "target": "es2018"
   },
   "include": [
     "src/**/*"

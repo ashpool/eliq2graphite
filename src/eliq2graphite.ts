@@ -1,3 +1,4 @@
+// @ts-ignore
 import {Eliq} from 'eliq-promise';
 import {Graphite} from './graphite';
 
