@@ -1,6 +1,6 @@
 {
   "name": "eliq2graphite",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Fetches energy consumption from Eliq and forwards it to Graphite",
   "keywords": [
     "eliq",
