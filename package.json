@@ -1,6 +1,6 @@
 {
   "name": "eliq2graphite",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Fetches energy consumption from Eliq and forwards it to Graphite",
   "keywords": [
     "eliq",
@@ -46,28 +46,27 @@
     "node": ">=8"
   },
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "eliq-promise": "^3.1.1",
-    "graphite-promise": "^2.1.1",
+    "dotenv": "^10.0.0",
+    "eliq-promise": "^3.1.3",
+    "graphite-promise": "^3.0.3",
     "minimist": "^1.2.5"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.15",
-    "@types/node": "^14.14.9",
-    "@typescript-eslint/eslint-plugin": "^4.8.1",
-    "@typescript-eslint/parser": "^4.8.1",
-    "eslint": "^7.13.0",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jest": "^24.1.3",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-promise": "^4.2.0",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.6",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jest": "^25.2.3",
+    "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-typescript": "^0.14.0",
-    "jest": "^26.6.3",
-    "just-extend": "^4.1.1",
-    "prettier": "^2.2.0",
-    "ts-jest": "^26.4.4",
-    "typescript": "^4.1.2"
+    "jest": "^27.3.1",
+    "just-extend": "^5.1.1",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.4"
   },
   "jest": {
     "transform": {
